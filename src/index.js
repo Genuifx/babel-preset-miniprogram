@@ -36,7 +36,7 @@ const babelPresetMiniprogram = declare((api, opts, dirname) => {
         .getModulesListForTargetVersion(polyfillCoreJsVersion)
         .filter(
           (module) =>
-            !polyfillExcludeRegexps.some((exclude) => exclude.test(module))
+            polyfillExcludeRegexps.some((exclude) => exclude.test(module))
         )
     );
   }
